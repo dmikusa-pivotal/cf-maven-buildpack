@@ -11,10 +11,7 @@ class CurlCustomDownloader(object):
                "-w", "%{http_code}"]
         if url.find('download.oracle.com') >= 0:
             cmd.append("-H")
-            cmd.append("Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork"
-                        "%2Fjava%2Fjavase%2Fdownloads%2Fjdk7-downloads-1880260.html;"
-                        "oraclelicense=accept-securebackup-cookie;"
-                        "s_cc=true;")
+            cmd.append("Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk10-downloads-4416644.html;oraclelicense=accept-securebackup-cookie;s_cc=true;")
         cmd.append(url)
         proc = Popen(cmd, stdout=PIPE)
         output, unused_err = proc.communicate()
@@ -22,5 +19,5 @@ class CurlCustomDownloader(object):
         if output and \
                 (output.startswith('4') or
                  output.startswith('5')):
-            raise RuntimeError("curl says [%s]" % output)
+            raise RuntimeError("curl says [%s] on %s" % (output, cmd))
         print "Downloaded [%s] to [%s]" % (url, toFile)

@@ -10,8 +10,8 @@ class CurlCustomDownloader(object):
                "-o", toFile,
                "-w", "%{http_code}"]
         if url.find('download.oracle.com') >= 0:
-            cmd.append("-H")
-            cmd.append("Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk10-downloads-4416644.html;oraclelicense=accept-securebackup-cookie;s_cc=true;")
+            cmd.append("-b")
+            cmd.append("oraclelicense=accept-securebackup-cookie")
         cmd.append(url)
         proc = Popen(cmd, stdout=PIPE)
         output, unused_err = proc.communicate()

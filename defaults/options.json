@@ -10,6 +10,6 @@
     "MAVEN_PACKAGE": "apache-maven-3.5.3-bin.tar.gz",
     "MAVEN_PACKAGE_HASH": "bbfa43a4ce4ef96732b896d057f8a613aa229801",
     "MAVEN_STRIP": true,
-    "MAVEN_BUILD_COMMAND": "test",
-    "MAVEN_RUN_COMMAND": "tomcat7:run"
+    "MAVEN_BUILD_COMMAND": "clean package",
+    "MAVEN_RUN_COMMAND": "spring-boot:run"
 }

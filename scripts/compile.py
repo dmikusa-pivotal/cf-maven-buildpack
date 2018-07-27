@@ -80,5 +80,6 @@ if __name__ == '__main__':
                 .run('$M2_HOME/bin/mvn')
                 .with_argument('-Dmaven.repo.local=$HOME/repo')
                 .with_argument('MAVEN_RUN_COMMAND')
+                .with_argument('--batch-mode')
                 .done()
             .write())

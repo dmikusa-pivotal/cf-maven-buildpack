@@ -19,5 +19,5 @@ class CurlCustomDownloader(object):
         if output and \
                 (output.startswith('4') or
                  output.startswith('5')):
-            raise RuntimeError("curl says [%s] on %s" % (output, cmd))
+            raise RuntimeError("curl says [%s], failed to download file %s" % (output, url))
         print "Downloaded [%s] to [%s]" % (url, toFile)

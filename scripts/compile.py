@@ -31,7 +31,7 @@ def copy_maven_repo_to_droplet(cfg):
 
 
 def log_run(cmd, retcode, stdout, stderr):
-    print 'Comand %s completed with [%d]' % (str(cmd), retcode)
+    print 'Command %s completed with [%d]' % (str(cmd), retcode)
     print 'STDOUT:'
     print stdout
     print 'STDERR:'
